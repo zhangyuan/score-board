@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
   rake RAILS_ENV=production db:migrate
   rake RAILS_ENV=production db:seed
-  rails server -b 0.0.0.0 -p 80 -e production
+  rails server -b 0.0.0.0 -p 80 -d -e production
 
 * ...
 
