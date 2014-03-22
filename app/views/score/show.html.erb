@@ -1,2 +1,41 @@
-<h1>Score#show</h1>
-<p>Find me in app/views/score/show.html.erb</p>
+<h1>Submit Your Answer</h1>
+
+<%= form_tag do %>
+
+    <%= label_tag(:q, "Your Name:") %> <%= text_field_tag("your_name",nil, maxlength: 20, size: 20) %>
+    <br>
+    <%= label_tag(:q, "Answer Token:") %> <%= text_field_tag("answer_token", nil, maxlength: 20, size: 20) %>
+    <%= submit_tag("Submit") %>
+<% end %>
+
+
+<h1>Score Board</h1>
+
+<table>
+  <tr>
+    <%(0..4).each do |i|%>
+    <th><%=@challenges[i].title%></th>
+    <%end %>
+  </tr>
+
+  <tr>
+    <%(0..4).each do |i|%>
+        <th><%=@challenges[i].description%></th>
+    <%end %>
+  </tr>
+
+  <tr>
+    <%(0..4).each do |j|%>
+        <td>
+          <ol>
+            <%@scores[j].each do |score|%>
+              <li><%=score.user_name%></li>
+            <%end %>
+          </ol>
+        </td>
+    <%end %>
+  </tr>
+
+</table>
+
+<br />
