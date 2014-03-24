@@ -1,6 +1,5 @@
 class ScoreController < ApplicationController
   def show
-
     if ! params['commit'].nil?
       @challenge_index = Challenges.find_by_answer_token(params['answer_token'])
       if ! @challenge_index.nil?

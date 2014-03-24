@@ -1,26 +1,39 @@
-<h1>Security Challenge</h1>
+<div class="container">
+  <div class="jumbotron">
+    <img src="assets/tw-logo.png" alt="Security Challenge" height="25" />
+    <h1>Security Challenge</h1>
+    <div class="clearfix"></div>
+  </div>
+
 <h2>Submit Your Answer</h2>
 
-<%= form_tag do %>
-
-    <%= label_tag(:q, "Your Name:") %> <%= text_field_tag("your_name",nil, maxlength: 20, size: 20) %>
-    <br>
-    <%= label_tag(:q, "Answer Token:") %> <%= text_field_tag("answer_token", nil, maxlength: 20, size: 20) %>
-    <%= submit_tag("Submit") %>
-<% end %>
-
+<div class="row">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="your_name" class="col-md-2 control-label">Your name: </label>
+        <div class="col-md-10">
+          <%= text_field_tag("your_name",nil, maxlength: 20, size: 20) %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="answer_token" class="col-md-2 control-label">Answer Token: </label>
+        <div class="col-md-10">
+            <%= text_field_tag("answer_token", nil, maxlength: 20, size: 20) %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <%= submit_tag("Submit") %>
+        </div>
+      </div>
+    </form>
+</div>
 <h2>Score Board</h2>
 
-<table>
+<table class="table table-bordered">
   <tr>
     <%(0..4).each do |i|%>
     <th><%=@challenges[i].title%></th>
-    <%end %>
-  </tr>
-
-  <tr>
-    <%(0..4).each do |i|%>
-        <th><%=@challenges[i].description%></th>
     <%end %>
   </tr>
 
@@ -39,3 +52,4 @@
 </table>
 
 <br />
+</div>
