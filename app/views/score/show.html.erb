@@ -32,13 +32,13 @@
 
 <table class="table table-bordered">
   <tr>
-    <%(0..4).each do |i|%>
+    <%(0..@challenge_count_max-1).each do |i|%>
     <th><%=@challenges[i].title%></th>
     <%end %>
   </tr>
 
   <tr>
-    <%(0..4).each do |j|%>
+    <%(0..@challenge_count_max-1).each do |j|%>
         <td>
           <ol>
             <%@scores[j].each do |score|%>

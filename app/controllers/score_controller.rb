@@ -1,5 +1,6 @@
 class ScoreController < ApplicationController
   def show
+    @challenge_count_max = 4
     if ! params['commit'].nil?
       @challenge_index = Challenges.find_by_answer_token(params['answer_token'])
       if ! @challenge_index.nil?
@@ -14,7 +15,7 @@ class ScoreController < ApplicationController
     @challenges = Challenges.order("'index'").all
 
     @scores = Array.new
-    (0..4).each do |i|
+    (0..@challenge_count_max-1).each do |i|
       @scores[i] = Scores.where("challenge_index=?",i+1).order("created_at").all
     end
 
