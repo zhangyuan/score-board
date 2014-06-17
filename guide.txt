@@ -1,0 +1,25 @@
+Step 1: install gems
+
+$ bundle install
+
+Step 2: migrate database
+
+$ rake db:migrate RAILS_ENV=production
+$ rake db:seed RAILS_ENV=production
+
+Step 3: start the server
+
+$ . StartServer.sh
+
+The score board should be running at: http://localhost:9000
+
+====================
+
+In order to stop the web server, run following commands:
+
+
+Step 1: get the pid
+$ cat tmp/pids/server.pid
+
+Step 2: kill the pid
+$ kill <pid>
