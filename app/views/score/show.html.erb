@@ -40,11 +40,11 @@
   <tr>
     <%(0..@challenge_count_max-1).each do |j|%>
         <td>
-          <ol>
+          <ul>
             <%@scores[j].each do |score|%>
               <li><%=score.user_name%></li>
             <%end %>
-          </ol>
+          </ul>
         </td>
     <%end %>
   </tr>
