@@ -12,13 +12,14 @@ class ScoreController < ApplicationController
   end
 
   def store_score
-    @challenge_index = Challenges.find_by_answer_token(params['answer_token'])
+    token = Token.find_by_token_value(params['answer_token'])
 
-    unless @challenge_index.nil?
+    unless token.nil?
       begin
-        Scores.find_or_create_by!(user_name: params['your_name'], challenge_index: @challenge_index['index'])
-      rescue
-        printf("Error occur when add record to score tale");
+        Scores.create({:user_name => params['your_name'], :challenge_index => token['challenge_index']})
+        token.delete
+      rescue Exception => e
+        p "Failed to add record to score table. #{e}"
       end
     end
   end
