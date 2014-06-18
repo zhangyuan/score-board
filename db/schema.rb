@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321173106) do
+ActiveRecord::Schema.define(version: 20140618143347) do
 
   create_table "challenges", force: true do |t|
     t.integer  "index"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20140321173106) do
   create_table "scores", force: true do |t|
     t.string   "user_name"
     t.integer  "challenge_index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tokens", force: true do |t|
+    t.string   "token_value"
+    t.string   "challenge_index"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,6 +1,9 @@
 SecurityChallenge::Application.routes.draw do
   get "score" => 'score#show'
-  post "score" => 'score#show'
+  post "score" => 'score#add'
+
+  get "score/token" => 'token#add'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -8,7 +8,7 @@
 <h2>Submit Your Answer</h2>
 
 <div class="row">
-    <form class="form-horizontal">
+    <%= form_tag('/score') do -%>
       <div class="form-group">
         <label for="your_name" class="col-md-2 control-label">Your name: </label>
         <div class="col-md-10">
@@ -26,7 +26,7 @@
           <%= submit_tag("Submit") %>
         </div>
       </div>
-    </form>
+    <% end -%>
 </div>
 <h2>Score Board</h2>
 
