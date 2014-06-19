@@ -9,9 +9,9 @@ $ rake db:seed RAILS_ENV=production
 
 Step 3: start the server
 
-$ . StartServer.sh
+$ . start.sh
 
-The score board should be running at: http://localhost:9000
+The score board should be running at: http://localhost:9000/score
 
 ====================
 
@@ -20,6 +20,8 @@ In order to stop the web server, run following commands:
 
 Step 1: get the pid
 $ cat tmp/pids/server.pid
+or
+$ . pid.sh
 
 Step 2: kill the pid
 $ kill <pid>
